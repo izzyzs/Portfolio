@@ -8,7 +8,7 @@ const Contact = () => {
                 <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-6">Contact Me</h2>
                 <hr />
                 <section id="contact" className="animate-fade-in-up text-left pt-5" style={{ animationDelay: "0.8s" }}>
-                    <form className="space-y-4">
+                    <form className="space-y-4" action={process.env.FORM_API} method="POST">
                         <div>
                             <label htmlFor="name" className="block mb-2">
                                 Name
