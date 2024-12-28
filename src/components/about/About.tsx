@@ -19,7 +19,10 @@ const About = () => {
                     <div className="w-full sm:w-1/2 text-left md:text-justify text-xl">
                         <p className="pt-7 px-7 2xl:px-24">&#x27A1;&#xFE0F; Hi, I&apos;m Ismael Soumahoro, a fullstack developer with a focus on backend, creating reliable, scalable systems.</p>
                         <p className="pt-7 px-7 2xl:px-24">&#x27A1;&#xFE0F; I aim to develop tools and systems that simplify complex problems and create seamless user experiences.</p>
-                        <p className="pt-7 px-7 2xl:px-24">&#x27A1;&#xFE0F; Despite not having any internships, what I lack in experience I make up in vigor and willingness to learn and grow</p>
+                        <p className="pt-7 px-7 2xl:px-24">
+                            &#x27A1;&#xFE0F;While I don’t have formal internship experience, I bring a strong determination and a continuous commitment to learning and refining my development skills.
+                            I believe that this willingness to grow and adapt offers unique merit—one that’s just as valuable as traditional internship experience.
+                        </p>
                     </div>
                 </div>
             </div>
