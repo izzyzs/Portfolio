@@ -59,7 +59,7 @@ const About = () => {
                         <h3 className="mt-8 text-2xl md:mt-0 sm:text-4xl text-center"> Youtube</h3>
                         <p className="sm:text-xl my-6">I will soon be starting a project on my Youtube Channel where I deep dive into learning the C programming language. Stay tooned... &#x1f440;</p>
                         <a
-                            href="Ismael_Soumahoro_Resume.pdf"
+                            href="https://www.youtube.com/@IshTheCoder"
                             target="_blank"
                             className="text-cyan-600 bg-slate-900 border-slate-900 px-3 py-2 rounded-lg font-bold  mt-4 hover:text-cyan-400 hover:bg-black hover:border hover:border-cyan-400 duration-300"
                         >
