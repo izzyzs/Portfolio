@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import eCommerce from "%/basic-ecommerce-site-1.0.png";
+import gitHubImage from "%/GitHub_Logo_White.png";
+import weatherApp from "%/weatherapp.png";
 
 const About = () => {
     return (
@@ -10,7 +13,7 @@ const About = () => {
                 <hr />
                 <div className="flex flex-wrap items-center mt-20 text-center">
                     <div className="w-full md:w-3/5 lg:w-1/2 px-4">
-                        <Image src="images/basic-ecommerce-site-1.0.png" alt="gem" className="inline-block rounded shadow-lg border border-merino-400" />
+                        <Image src={eCommerce} alt="gem" className="inline-block rounded shadow-lg border border-merino-400" />
                     </div>
                     <div className="w-full md:w-2/5 lg:w-1/2 px-4 text-center md:text-left lg:pl-12">
                         <h3 className="font-bold mt-8 text-xl md:mt-0 sm:text-2xl"> &#x0031;&#xFE0F;&#x20E3; E-commerce Outline</h3>
@@ -24,14 +27,14 @@ const About = () => {
                             <li>Go (Backend)</li>
                         </ul>
                         <a href="https://github.com/izzyzs/basic-ecommerce-site-1.0" target="_blank" className="border-t-4 border-gray-400 block">
-                            <Image src="/images/GitHub_Logo_White.png" alt="Github Link" className="h-8 block  border border-black hover:bg-gray-600 duration-300" />
+                            <Image src={gitHubImage} alt="Github Link" className="h-8 block  border border-black hover:bg-gray-600 duration-300" />
                         </a>
                     </div>
                 </div>
 
                 <div className="flex flex-wrap items-center mt-20 text-center">
                     <div className="w-full md:w-3/5 lg:w-1/2 px-4">
-                        <Image src="images/weatherapp.png" alt="gem" className="inline-block rounded shadow-lg border border-merino-400" />
+                        <Image src={weatherApp} alt="gem" className="inline-block rounded shadow-lg border border-merino-400" />
                     </div>
                     <div className="w-full md:w-2/5 lg:w-1/2 px-4 md:order-first text-center md:text-left lg:pr-12">
                         <h3 className="font-bold mt-8 text-xl md:mt-0 sm:text-2xl"> &#x0032;&#xFE0F;&#x20E3; WeatherApp</h3>
@@ -42,7 +45,7 @@ const About = () => {
                             <li>Node.Js/Express (Backend)</li>
                         </ul>
                         <a href="https://github.com/izzyzs/WeatherApp" target="_blank" className="border-t-4 border-gray-400 block">
-                            <Image src="/images/GitHub_Logo_White.png" alt="Github Link" className="h-8 block  border border-black hover:bg-gray-600 duration-300" />
+                            <Image src={gitHubImage} alt="Github Link" className="h-8 block  border border-black hover:bg-gray-600 duration-300" />
                         </a>
                     </div>
                 </div>
