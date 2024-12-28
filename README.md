@@ -10,6 +10,7 @@ So far, my tech stack is as follows:
 
 1. React.js & Next.js with Typescript
 2. Tailwind
+3. getform.io (for contact me form submission)
 
 -   **_Note_**: Im not sure if I'll really need anything more, but that will depend on how far I take the project. I just wanted to create something really barebones to start with, and just deploy.
 
