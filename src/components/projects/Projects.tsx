@@ -26,8 +26,8 @@ const About = () => {
                             <li>React (Frontend)</li>
                             <li>Go (Backend)</li>
                         </ul>
-                        <a href="https://github.com/izzyzs/basic-ecommerce-site-1.0" target="_blank" className="border-t-4 border-gray-400 block">
-                            <Image src={gitHubImage} alt="Github Link" className="h-8 block  border border-black hover:bg-gray-600 duration-300" />
+                        <a href="https://github.com/izzyzs/basic-ecommerce-site-1.0" target="_blank" className="mt-3 border-t border-gray-700 block">
+                            <Image src={gitHubImage} alt="Github Link" className="h-8 w-20 block  border border-black hover:bg-gray-600 duration-300" />
                         </a>
                     </div>
                 </div>
@@ -44,8 +44,8 @@ const About = () => {
                             <li>React (Frontend)</li>
                             <li>Node.Js/Express (Backend)</li>
                         </ul>
-                        <a href="https://github.com/izzyzs/WeatherApp" target="_blank" className="border-t-4 border-gray-400 block">
-                            <Image src={gitHubImage} alt="Github Link" className="h-8 block  border border-black hover:bg-gray-600 duration-300" />
+                        <a href="https://github.com/izzyzs/WeatherApp" target="_blank" className="mt-3 border-t border-gray-700 block">
+                            <Image src={gitHubImage} alt="Github Link" className="h-8 w-20 block  border border-black hover:bg-gray-600 duration-300" />
                         </a>
                     </div>
                 </div>
