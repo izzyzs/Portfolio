@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="scroll-smooth">
-            <body className={`${oldStandardTTLight.className} antialiased`}>{children}</body>
+            <body className={`${oldStandardTTLight.className} antialiased bg-slate-950  text-gray-200 border-gray-200`}>{children}</body>
         </html>
     );
 }
