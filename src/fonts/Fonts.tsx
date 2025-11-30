@@ -4,13 +4,19 @@ import { Quintessential, Old_Standard_TT, Amiri, Geist, Geist_Mono, Limelight, R
 
 export const quintessential = Quintessential({
     weight: "400",
+    subsets: ["latin"],
+    display: "swap",
 });
 
 export const oldStandardTTLight = Old_Standard_TT({
     weight: "400",
+    subsets: ["latin"],
+    display: "swap",
 });
 export const oldStandardTTHeavy = Old_Standard_TT({
     weight: "700",
+    subsets: ["latin"],
+    display: "swap",
 });
 
 export const amiriHeavy = Amiri({
