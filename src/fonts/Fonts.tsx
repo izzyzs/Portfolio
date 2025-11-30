@@ -1,10 +1,21 @@
-import { Amiri, Geist, Geist_Mono, Limelight, Rock_Salt } from "next/font/google";
+import { Quintessential, Old_Standard_TT, Amiri, Geist, Geist_Mono, Limelight, Rock_Salt, DM_Serif_Display } from "next/font/google";
 
 // AMIRI
 
+export const quintessential = Quintessential({
+    weight: "400",
+});
+
+export const oldStandardTTLight = Old_Standard_TT({
+    weight: "400",
+});
+export const oldStandardTTHeavy = Old_Standard_TT({
+    weight: "700",
+});
+
 export const amiriHeavy = Amiri({
     weight: "700",
-    subsets: ["arabic", "latin"],
+    subsets: ["latin"],
     display: "swap",
 });
 
@@ -41,4 +52,13 @@ export const rockSalt = Rock_Salt({
     subsets: ["latin"],
     fallback: ["cursive"],
     display: "swap",
+});
+
+// DM SERIF DISPLAY
+
+export const dmSerifDisplay = DM_Serif_Display({
+    weight: "400",
+    subsets: ["latin"],
+    display: "swap",
+    fallback: ["serif"],
 });

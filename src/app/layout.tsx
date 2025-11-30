@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { amiriLight } from "@/fonts/Fonts";
+import { amiriLight, oldStandardTTLight } from "@/fonts/Fonts";
 
 export const metadata: Metadata = {
     title: "Ismael Soumahoro",
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="scroll-smooth">
-            <body className={`${amiriLight.className} antialiased`}>{children}</body>
+            <body className={`${oldStandardTTLight.className} antialiased`}>{children}</body>
         </html>
     );
 }
