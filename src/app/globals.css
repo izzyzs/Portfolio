@@ -1,24 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* :root {
+@theme {
+    --color-oxford-blue: oklch(0.2801 0.0354 252.35);
+    --color-subtle-gold: oklch(0.6584 0.1018 79.13);
+    --color-script-white: oklch(0.8889 0 0);
+    --color-graphite: oklch(0.2931 0 0);
+    --color-linen: oklch(0.947 0.0156 86.43);
+
+    --breakpoint-3xl: 144rem;
+}
+
+@layer utilities {
+    /* :root {
     --background: #ffffff;
     --foreground: #171717;
 }
  */
 
-/* :root {
+    /* :root {
     --background: #0a0a0a;
     --foreground: #ededed;
 } */
 
-body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.my-svg {
-    stroke: inherit;
+    .my-svg {
+        stroke: inherit;
+    }
 }

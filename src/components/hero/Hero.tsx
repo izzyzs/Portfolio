@@ -7,8 +7,8 @@ import { limelight, amiriLight } from "@/fonts/Fonts";
 const Hero = () => {
     return (
         <section className="flex flex-col mx-auto w-[50%] my-[20%]">
-            <span className={`${amiriLight.className} self-start mr-4 text-3xl sm:text-5xl md:text-7xl 2xl:text-9xl`}>Ismael</span>
-            <span className={`${limelight.className} text-yellow-700 self-end ml-8 text-2xl sm:text-4xl md:text-6xl 2xl:text-8xl`}>SOUMAHORO</span>
+            <span className={`${amiriLight.className} self-start mr-4 text-3xl sm:text-5xl md:text-7xl lg:text-8xl 3xl:text-[10rem]`}>Ismael</span>
+            <span className={`${limelight.className} text-subtle-gold self-end ml-8 text-2xl sm:text-4xl md:text-6xl lg:text-7xl`}>SOUMAHORO</span>
         </section>
     );
 };

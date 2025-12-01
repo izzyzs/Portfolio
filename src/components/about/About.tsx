@@ -1,18 +1,19 @@
 import React from "react";
-import { amiriLight } from "@/fonts/Fonts";
+
 import Image from "next/image";
+import SectionHeader from "../section-header";
+
+import { amiriLight } from "@/fonts/Fonts";
 import headShot from "%/headshot.png";
 
-const About = () => {
+export default function About() {
     return (
-        <section className="pt-12 text-gray-100 lg:py-16" id="about">
+        <section className="pt-12  lg:py-16" id="about">
             <div className="text-center p-8">
-                <hr className="border-gray-400" />
-                <h2 className="text-gray-400 font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-6">About Me</h2>
-                <hr className="border-gray-400" />
+                <SectionHeader>About Me</SectionHeader>
                 <div className="sm:flex">
                     {/* <div className="w-full sm:w-1/2 sm:h-[50%] relative float-left"> */}
-                    <Image src={headShot} alt="Headshot photo of me" className="w-1/2 max-w-96 mx-auto pt-5 rounded-full float-left h-[100%]" />
+                    <Image src={headShot} alt="Headshot photo of me" className="w-1/2 max-w-96 mx-auto pt-5 rounded-full float-left h-full" />
                     {/* <p className={`absolute text-xs lg:text-xl top-[15px] sm:top-[30px]   start-10 sm:start-[10px] md:start-[50px]  rotate-15 ${rockSalt.className}`}>
                             Thats me! &#x1F449;&#x1F3FE;
                         </p> */}
@@ -38,6 +39,4 @@ const About = () => {
             </div>
         </section>
     );
-};
-
-export default About;
+}

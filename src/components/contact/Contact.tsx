@@ -8,7 +8,7 @@ const Contact = () => {
                 <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-6">Contact Me</h2>
                 <hr />
                 <section id="contact" className="animate-fade-in-up text-left pt-5" style={{ animationDelay: "0.8s" }}>
-                    <form className="space-y-4" action={process.env.FORM_API} method="POST">
+                    <form className="space-y-4 sm:w-[70%] mx-auto" action={process.env.FORM_API} method="POST">
                         <div>
                             <label htmlFor="name" className="block mb-2">
                                 Name
@@ -17,7 +17,7 @@ const Contact = () => {
                                 type="text"
                                 id="name"
                                 name="name"
-                                className="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
+                                className="w-full px-4 py-2 rounded-lg text-graphite bg-linen bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
                                 required
                             />
                         </div>
@@ -29,7 +29,7 @@ const Contact = () => {
                                 type="email"
                                 id="email"
                                 name="email"
-                                className="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
+                                className="w-full px-4 py-2 rounded-lg text-graphite bg-linen bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
                                 required
                             />
                         </div>
@@ -41,11 +41,11 @@ const Contact = () => {
                                 id="message"
                                 name="message"
                                 rows={4}
-                                className="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
+                                className="w-full px-4 py-2 rounded-lg text-graphite bg-linen bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
                                 required
                             ></textarea>
                         </div>
-                        <button type="submit" className="bg-white text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
+                        <button type="submit" className="bg-script-white text-graphite px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
                             Send Message
                         </button>
                     </form>
