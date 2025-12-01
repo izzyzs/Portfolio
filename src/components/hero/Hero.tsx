@@ -1,5 +1,8 @@
 import React from "react";
-import { limelight, dmSerifDisplay, quintessential, amiriLight } from "@/fonts/Fonts";
+import { limelight, amiriLight } from "@/fonts/Fonts";
+{
+    /*, dmSerifDisplay, quintessential,*/
+}
 
 const Hero = () => {
     return (

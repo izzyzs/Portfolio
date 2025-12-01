@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { amiriLight, oldStandardTTLight } from "@/fonts/Fonts";
+import { oldStandardTTLight } from "@/fonts/Fonts";
 
 export const metadata: Metadata = {
     title: "Ismael Soumahoro",

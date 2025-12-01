@@ -1,5 +1,5 @@
 import React from "react";
-import { amiriHeavy, amiriLight } from "@/fonts/Fonts";
+import { amiriHeavy } from "@/fonts/Fonts";
 import "./header.css";
 
 const Header = () => {

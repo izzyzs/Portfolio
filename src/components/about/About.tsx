@@ -1,5 +1,5 @@
 import React from "react";
-import { amiriLight, rockSalt } from "@/fonts/Fonts";
+import { amiriLight } from "@/fonts/Fonts";
 import Image from "next/image";
 import headShot from "%/headshot.png";
 
