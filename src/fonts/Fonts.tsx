@@ -5,29 +5,34 @@ import { Quintessential, Old_Standard_TT, Amiri, Geist, Geist_Mono, Limelight, R
 export const quintessential = Quintessential({
     weight: "400",
     subsets: ["latin"],
+    fallback: ["serif"],
     display: "swap",
 });
 
 export const oldStandardTTLight = Old_Standard_TT({
     weight: "400",
     subsets: ["latin"],
+    fallback: ["serif"],
     display: "swap",
 });
 export const oldStandardTTHeavy = Old_Standard_TT({
     weight: "700",
     subsets: ["latin"],
+    fallback: ["serif"],
     display: "swap",
 });
 
 export const amiriHeavy = Amiri({
     weight: "700",
     subsets: ["latin"],
+    fallback: ["serif"],
     display: "swap",
 });
 
 export const amiriLight = Amiri({
     weight: "400",
     subsets: ["arabic", "latin"],
+    fallback: ["serif"],
     display: "swap",
 });
 
@@ -36,11 +41,13 @@ export const amiriLight = Amiri({
 export const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
+    fallback: ["sans-serif"],
 });
 
 export const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
+    fallback: ["monospace"],
 });
 
 // LIMELIGHT
@@ -49,6 +56,7 @@ export const limelight = Limelight({
     weight: "400",
     subsets: ["latin"],
     display: "swap",
+    fallback: ["sans-serif"],
 });
 
 // ROCK SALT
