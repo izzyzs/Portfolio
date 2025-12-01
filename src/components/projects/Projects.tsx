@@ -1,12 +1,21 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+
+// Media
 import eCommerce from "%/basic-ecommerce-site-1.0.png";
 import gitHubImage from "%/GitHub_Logo_White.png";
 import weatherApp from "%/weatherapp.png";
 import tbsSite from "%/tbs-e-commerce.png";
+import csApp from "%/csapp3e-cover.png";
 import youtube from "%/svg/youtube.svg";
+
+// Fonts
 import { oldStandardTTLight, quintessential } from "@/fonts/Fonts";
+
+// Types
 import Project from "@/lib/types/project-description";
+
+// TSX componente
+import Image from "next/image";
 import SectionHeader from "../section-header";
 
 const projects: Project[] = [
@@ -16,6 +25,14 @@ const projects: Project[] = [
         summary: "Building an e-commerce platform for my family's business.",
         technologies: ["Next.js w/ TS (Frontend)", "shadcn/ui (UI components)", "Supabase (Database and Auth)", "ChatGPT and other LLMs (Debugging assistants)"],
         link: "https://github.com/izzyzs/tbs-ecomm-prototyping",
+        inProgress: true,
+    },
+    {
+        image: csApp,
+        title: "Self Study of CS:APP",
+        summary: "Strengthening computer science and systems fundamentals through an intensive self study of Computer Systems: A Programmer's Perspective",
+        technologies: ["C and x86-64 Assembly"],
+        inProgress: true,
     },
     {
         image: eCommerce,
@@ -47,7 +64,7 @@ export default function Projects() {
                         <div className="w-full md:w-2/5 lg:w-1/2 px-4 text-center md:text-left lg:pl-12">
                             <h3 className="font-bold mt-8 text-xl md:mt-0 sm:text-2xl">
                                 {" "}
-                                <span className={`${quintessential.className} text-4xl`}>{idx + 1}.</span> {project.title}
+                                <span className={`${quintessential.className} text-4xl`}>{idx + 1}.</span> {`${project.title} ${project.inProgress ? "(In Progress...)" : ""}`}
                             </h3>
                             <p className="sm:text-xl mt-6 mb-3">{project.summary}</p>
                             <h4 className="sm:text-[22px] font-bold">Technologies:</h4>
@@ -56,9 +73,13 @@ export default function Projects() {
                                     <li key={idx}>{tech}</li>
                                 ))}
                             </ul>
-                            <a href={project.link} target="_blank" className="mt-3 p-3 border-t mx-auto w-20 block border border-graphite rounded-sm hover:bg-gray-600 duration-300">
-                                <Image src={gitHubImage} alt="Github Link" className="" />
-                            </a>
+                            {project.link ? (
+                                <a href={project.link} target="_blank" className="mt-3 p-3 border-t mx-auto w-20 block border border-graphite rounded-sm hover:bg-gray-600 duration-300">
+                                    <Image src={gitHubImage} alt="Github Link" className="" />
+                                </a>
+                            ) : (
+                                ""
+                            )}
                         </div>
                     </div>
                 ))}
