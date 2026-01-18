@@ -96,7 +96,7 @@ export default function Projects() {
                             <span className={`${oldStandardTTLight.className} italic`}>computer scientist...</span>
                         </p>
                         <a
-                            href="https://www.youtube.com/@IshTheCoder"
+                            href="https://www.youtube.com/@IsmaelZBuilds"
                             target="_blank"
                             className="text-cyan-600 bg-slate-900 border-slate-900 px-3 py-2 rounded-lg font-bold  mt-4 hover:text-cyan-400 hover:bg-black hover:border hover:border-cyan-400 duration-300"
                         >
