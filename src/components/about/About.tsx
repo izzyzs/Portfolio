@@ -21,12 +21,12 @@ export default function About() {
                     {/* </div> */}
                     <div className={`w-full text-justify text-xl indent-6 ${amiriLight.className}`}>
                         <p className="pt-7 px-7 2xl:px-24">
-                            Hey! My name is Ismael Soumahoro and I&apos;m an aspiring Software Engineer. After graduating last May, I decided to strengthen my computer science foundations by studying
+                            Hey! I&apos;m Ismael Soumahoro, an aspiring Software Engineer. After graduating last May, I decided to strengthen my computer science foundations by studying
                             Computer Systems: A Programmer&apos;s Perspective. I came to realize that becoming job ready means more than theory; it requires building software that solves real
                             problems.
                         </p>
                         <p className="pt-7 px-7 2xl:px-24">
-                            With that in mind, I shifted my attention toward building an e-commerce application. My father had considered hiring a developer to build an e-commerce site with particular
+                            With that in mind, I shifted my attention toward building an e-commerce application. My dad had considered hiring a developer to build an e-commerce site with particular
                             requirements for our brick-and-mortar retail business. I volunteered to work on the site as an opportunity to design and build client-facing software with real-world
                             requirements. He agreed, and as such, I began building the platform.
                         </p>
