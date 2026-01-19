@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-    --color-oxford-blue: oklch(0.2801 0.0354 252.35);
+    --color-oxford-blue: oklch(0.1868 0.0427 265.98);
+    /*--color-oxford-blue: oklch(0.2801 0.0354 252.35);*/
     --color-subtle-gold: oklch(0.6584 0.1018 79.13);
     --color-script-white: oklch(0.8889 0 0);
     --color-graphite: oklch(0.2931 0 0);
