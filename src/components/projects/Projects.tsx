@@ -14,18 +14,20 @@ import { oldStandardTTLight, quintessential } from "@/fonts/Fonts";
 // Types
 import Project from "@/lib/types/project-description";
 
-// TSX componente
+// TSX components
 import Image from "next/image";
 import SectionHeader from "../section-header";
 
 const projects: Project[] = [
     {
         image: tbsSite,
-        title: "TBS E-commerce Site",
-        summary: "Building an e-commerce platform for my family's business.",
-        technologies: ["Next.js w/ TS (Frontend)", "shadcn/ui (UI components)", "Supabase (Database and Auth)", "ChatGPT and other LLMs (Debugging assistants)"],
+        title: "Today Beauty Supply E-Commerce Prototype",
+        summary:
+            "Built and deployed a full-stack e-commerce prototype for my family’s beauty supply business, featuring product browsing, categories, cart management, inventory metadata, authentication-aware UI, Stripe Checkout, and order confirmation.",
+        technologies: ["Next.js", "TypeScript", "Supabase/PostgreSQL", "Stripe Checkout", "Tailwind CSS", "shadcn/ui", "Vercel"],
+        demo: "https://tbs-ecomm-prototyping-store-front.vercel.app/",
         link: "https://github.com/izzyzs/tbs-ecomm-prototyping",
-        inProgress: true,
+        inProgress: false,
     },
     {
         image: csApp,
@@ -73,13 +75,26 @@ export default function Projects() {
                                     <li key={idx}>{tech}</li>
                                 ))}
                             </ul>
-                            {project.link ? (
-                                <a href={project.link} target="_blank" className="mt-3 p-3 border-t mx-auto w-20 block border border-graphite rounded-sm hover:bg-gray-600 duration-300">
-                                    <Image src={gitHubImage} alt="Github Link" className="" />
-                                </a>
-                            ) : (
-                                ""
-                            )}
+                            <div className="md:grid md:grid-cols-2 gap-x-4">
+                                {project.demo ? (
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        className="mt-3 p-3 border-t text-center mx-auto w-30 block border border-graphite rounded-sm hover:bg-gray-600 duration-300 font-extrabold"
+                                    >
+                                        Check it out!
+                                    </a>
+                                ) : (
+                                    ""
+                                )}
+                                {project.link ? (
+                                    <a href={project.link} target="_blank" className="mt-3 p-3 border-t mx-auto w-20 block border border-graphite rounded-sm hover:bg-gray-600 duration-300">
+                                        <Image src={gitHubImage} alt="Github Link" className="" />
+                                    </a>
+                                ) : (
+                                    ""
+                                )}
+                            </div>
                         </div>
                     </div>
                 ))}
