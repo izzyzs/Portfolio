@@ -20,19 +20,33 @@ export default function About() {
                     {/* lg:top-[90px] lg:start-[100px] */}
                     {/* </div> */}
                     <div className={`w-full text-justify text-xl indent-6 ${amiriLight.className}`}>
+                        {/*
+                        Hey, I’m Ismael Soumahoro, 
+
+After graduating with a B.S. in Computer Science, I returned to a deeper study of systems through *Computer Systems: A Programmer’s Perspective* while continuing to build real software. My main recent project is a deployed full-stack e-commerce prototype for Today Beauty Supply, my family’s brick-and-mortar retail business. I built it to evaluate whether a custom storefront could support the business’s transition into online retail, implementing product browsing, categories, cart management, authentication-aware UI, inventory metadata, Stripe Checkout, and order confirmation.
+
+The business ultimately chose Shopify for production because of its speed-to-market, admin tooling, payment handling, and operational simplicity. The prototype still served its purpose: it gave me a real business problem to model, build around, deploy, and reason through technically.
+
+I’m now looking for a software engineering role where I can contribute, grow under experienced engineers, and keep building useful systems with strong fundamentals behind them.
+
+                        */}
                         <p className="pt-7 px-7 2xl:px-24">
-                            Hey! I&apos;m Ismael Soumahoro, an aspiring Software Engineer. After graduating last May, I decided to strengthen my computer science foundations by studying
-                            Computer Systems: A Programmer&apos;s Perspective. I came to realize that becoming job ready means more than theory; it requires building software that solves real
-                            problems.
+                            Hey! I&apos;m Ismael Soumahoro,a software engineer focused on building practical full-stack applications and strengthening my computer science foundations.
                         </p>
                         <p className="pt-7 px-7 2xl:px-24">
-                            With that in mind, I shifted my attention toward building an e-commerce application. My dad had considered hiring a developer to build an e-commerce site with particular
-                            requirements for our brick-and-mortar retail business. I volunteered to work on the site as an opportunity to design and build client-facing software with real-world
-                            requirements. He agreed, and as such, I began building the platform.
+                            After graduating with a B.S. in Computer Science, I returned to a deeper study of systems through{" "}
+                            <span className="font-bold">Computer Systems: A Programmer&apos;s Perspective</span> while continuing to build real software. My main recent project is a deployed
+                            full-stack e-commerce prototype for Today Beauty Supply, my family&apos;s brick-and-mortar retail business. I built it to evaluate whether a custom storefront could support
+                            the business&apos;s transition into online retail, implementing product browsing, categories, cart management, authentication-aware UI, inventory metadata, Stripe Checkout,
+                            and order confirmation.
                         </p>
                         <p className="pt-7 px-7 2xl:px-24">
-                            Originally, I planned to complete the project before seeking employment. I came to recognize, however, that what I&apos;ve built so far demonstrates my engineering ability.
-                            I am now looking for a role where I can grow under the mentorship of experienced engineers and build impactful software.
+                            The business ultimately chose Shopify for production because of its speed-to-market, admin tooling, payment handling, and operational simplicity. The prototype still served
+                            its purpose: it gave me a real business problem to model, build around, deploy, and reason through technically.
+                        </p>
+                        <p>
+                            I&apos;m now looking for a software engineering role where I can contribute, grow under experienced engineers, and keep building useful systems with strong fundamentals
+                            behind them.
                         </p>
                     </div>
                 </div>
