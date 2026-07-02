@@ -40,16 +40,9 @@ const projects: Project[] = [
         image: eCommerce,
         title: "E-commerce Practice",
         summary:
-            "Built a basic, incomplete frame of an e-commerce website to learn more about the parts that play into the creation of one. This allowed me to reinforce my intuition regarding common backend paradigms (e.g. auth handling with JWTs) through the use of a new language (Go).",
+            "Built a basic frame of an e-commerce website to learn more about the parts that play into the creation of one. This allowed me to reinforce my intuition regarding common backend paradigms (e.g. auth handling with JWTs) through the use of Go.",
         technologies: ["React w/ TS (Frontend)", "Go (Backend)"],
         link: "https://github.com/izzyzs/basic-ecommerce-site-1.0",
-    },
-    {
-        image: weatherApp,
-        title: "WeatherApp",
-        summary: "Used a free OpenWeathermap API as my data source for current and future weather updates",
-        technologies: ["React w/ TS (Frontend)", "Node.Js/Express (Backend)"],
-        link: "https://github.com/izzyzs/WeatherApp",
     },
 ];
 
