@@ -44,7 +44,7 @@ I’m now looking for a software engineering role where I can contribute, grow u
                             The business ultimately chose Shopify for production because of its speed-to-market, admin tooling, payment handling, and operational simplicity. The prototype still served
                             its purpose: it gave me a real business problem to model, build around, deploy, and reason through technically.
                         </p>
-                        <p>
+                        <p className="pt-7 px-7 2xl:px-24">
                             I&apos;m now looking for a software engineering role where I can contribute, grow under experienced engineers, and keep building useful systems with strong fundamentals
                             behind them.
                         </p>
