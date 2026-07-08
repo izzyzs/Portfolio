@@ -31,7 +31,7 @@ I’m now looking for a software engineering role where I can contribute, grow u
 
                         */}
                         <p className="pt-7 px-7 2xl:px-24">
-                            Hey! I&apos;m Ismael Soumahoro,a software engineer focused on building practical full-stack applications and strengthening my computer science foundations.
+                            Hey! I&apos;m Ismael Soumahoro, a software engineer focused on building practical full-stack applications and strengthening my computer science foundations.
                         </p>
                         <p className="pt-7 px-7 2xl:px-24">
                             After graduating with a B.S. in Computer Science, I returned to a deeper study of systems through{" "}
