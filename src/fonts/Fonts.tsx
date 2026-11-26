@@ -1,78 +1,36 @@
-import { Quintessential, Old_Standard_TT, Amiri, Geist, Geist_Mono, Limelight, Rock_Salt, DM_Serif_Display } from "next/font/google";
+import { Old_Standard_TT, Fraunces, Libre_Caslon_Display, IBM_Plex_Mono } from "next/font/google";
 
-// AMIRI
-
-export const quintessential = Quintessential({
-    weight: "400",
+// Body text
+export const oldStandard = Old_Standard_TT({
+    weight: ["400", "700"],
+    style: ["normal", "italic"],
     subsets: ["latin"],
-    fallback: ["serif"],
     display: "swap",
+    variable: "--font-old-standard",
 });
 
-export const oldStandardTTLight = Old_Standard_TT({
-    weight: "400",
+// Headings (variable font, with the SOFT axis for the rounded "soft" setting)
+export const fraunces = Fraunces({
     subsets: ["latin"],
-    fallback: ["serif"],
     display: "swap",
-});
-export const oldStandardTTHeavy = Old_Standard_TT({
-    weight: "700",
-    subsets: ["latin"],
-    fallback: ["serif"],
-    display: "swap",
+    axes: ["SOFT", "opsz"],
+    variable: "--font-fraunces",
 });
 
-export const amiriHeavy = Amiri({
-    weight: "700",
-    subsets: ["latin"],
-    fallback: ["serif"],
-    display: "swap",
-});
-
-export const amiriLight = Amiri({
-    weight: "400",
-    subsets: ["arabic", "latin"],
-    fallback: ["serif"],
-    display: "swap",
-});
-
-// GEIST
-
-export const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-    fallback: ["sans-serif"],
-});
-
-export const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-    fallback: ["monospace"],
-});
-
-// LIMELIGHT
-
-export const limelight = Limelight({
+// The surname in the hero
+export const caslon = Libre_Caslon_Display({
     weight: "400",
     subsets: ["latin"],
     display: "swap",
-    fallback: ["sans-serif"],
+    variable: "--font-caslon",
 });
 
-// ROCK SALT
-
-export const rockSalt = Rock_Salt({
-    weight: "400",
-    subsets: ["latin"],
-    fallback: ["cursive"],
-    display: "swap",
-});
-
-// DM SERIF DISPLAY
-
-export const dmSerifDisplay = DM_Serif_Display({
-    weight: "400",
+// Code
+export const plexMono = IBM_Plex_Mono({
+    weight: ["400", "500"],
     subsets: ["latin"],
     display: "swap",
-    fallback: ["serif"],
+    variable: "--font-plex-mono",
 });
+
+export const fontVariables = [oldStandard.variable, fraunces.variable, caslon.variable, plexMono.variable].join(" ");

@@ -1,58 +1,35 @@
-import React from "react";
+import SectionHeader from "../section-header";
 
-const Contact = () => {
+const field =
+    "w-full px-4 py-2 rounded-sm bg-surface text-ink border border-rule focus:border-sage focus:outline-2 focus:outline-sage focus:outline-offset-1 transition-colors";
+
+export default function Contact() {
     return (
-        <section className="pt-12 text-gray-100 lg:py-16" id="contact">
-            <div className="text-center p-8">
-                <hr />
-                <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl py-6">Contact Me</h2>
-                <hr />
-                <section id="contact" className="animate-fade-in-up text-left pt-5" style={{ animationDelay: "0.8s" }}>
-                    <form className="space-y-4 sm:w-[70%] mx-auto" action={process.env.FORM_API} method="POST">
-                        <div>
-                            <label htmlFor="name" className="block mb-2">
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                className="w-full px-4 py-2 rounded-lg text-graphite bg-linen bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="block mb-2">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                className="w-full px-4 py-2 rounded-lg text-graphite bg-linen bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="message" className="block mb-2">
-                                Message
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows={4}
-                                className="w-full px-4 py-2 rounded-lg text-graphite bg-linen bg-opacity-20 focus:bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
-                                required
-                            ></textarea>
-                        </div>
-                        <button type="submit" className="bg-script-white text-graphite px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
-                            Send Message
-                        </button>
-                    </form>
-                </section>
-            </div>
+        <section aria-labelledby="contact" className="scroll-mt-20 py-12 lg:py-16">
+            <SectionHeader id="contact">Contact Me</SectionHeader>
+            <form className="max-w-2xl space-y-5" action={process.env.FORM_API} method="POST">
+                <div>
+                    <label htmlFor="name" className="block mb-2 font-mono text-sm text-muted">
+                        Name
+                    </label>
+                    <input type="text" id="name" name="name" autoComplete="name" className={field} required />
+                </div>
+                <div>
+                    <label htmlFor="email" className="block mb-2 font-mono text-sm text-muted">
+                        Email
+                    </label>
+                    <input type="email" id="email" name="email" autoComplete="email" className={field} required />
+                </div>
+                <div>
+                    <label htmlFor="message" className="block mb-2 font-mono text-sm text-muted">
+                        Message
+                    </label>
+                    <textarea id="message" name="message" rows={5} className={field} required></textarea>
+                </div>
+                <button type="submit" className="font-mono text-sm px-6 py-3 rounded-sm bg-gold text-ground border border-gold hover:opacity-90 transition-opacity">
+                    Send message
+                </button>
+            </form>
         </section>
     );
-};
-
-export default Contact;
+}
