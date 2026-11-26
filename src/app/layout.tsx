@@ -25,8 +25,10 @@ export const metadata: Metadata = {
     },
 };
 
-// Runs before first paint so the saved theme is applied without a flash.
-const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
+// The page is served dark (data-theme="dark" on <html>), so first-time visitors
+// get dark mode with no flash. This runs before first paint and applies a saved
+// choice: "light", or "system" (no attribute, so the OS setting decides).
+const themeScript = `try{var t=localStorage.getItem("theme"),d=document.documentElement;if(t==="light")d.dataset.theme=t;else if(t==="system")delete d.dataset.theme}catch(e){}`;
 
 export default function RootLayout({
     children,
@@ -34,7 +36,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`scroll-smooth ${fontVariables}`} suppressHydrationWarning>
+        <html lang="en" data-theme="dark" className={`scroll-smooth ${fontVariables}`} suppressHydrationWarning>
             <head>
                 <script dangerouslySetInnerHTML={{ __html: themeScript }} />
             </head>

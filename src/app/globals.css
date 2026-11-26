@@ -3,8 +3,9 @@
 /*
  * Theme: "retro-refined journal".
  * Paper (light) and Night (dark) palettes live as CSS variables on <html>.
- * The theme toggle sets data-theme="light" | "dark"; with no attribute the
- * visitor's system setting decides.
+ * <html> is served with data-theme="dark", so dark is the default. The theme
+ * toggle sets data-theme="light" | "dark", or removes it for "system", in
+ * which case the visitor's OS setting decides.
  */
 :root {
     --ground: #f3ede0;
