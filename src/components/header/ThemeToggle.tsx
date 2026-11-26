@@ -13,14 +13,13 @@ const options: { value: Theme; label: string }[] = [
 function readSaved(): Theme {
     try {
         const saved = localStorage.getItem("theme");
-        if (saved === "light" || saved === "dark" || saved === "system") return saved;
+        if (saved === "light" || saved === "dark") return saved;
     } catch {}
-    // No saved choice: the site defaults to dark.
-    return "dark";
+    return "system";
 }
 
 export default function ThemeToggle() {
-    const [theme, setTheme] = useState<Theme>("dark");
+    const [theme, setTheme] = useState<Theme>("system");
 
     useEffect(() => {
         setTheme(readSaved());
@@ -30,7 +29,11 @@ export default function ThemeToggle() {
         setTheme(next);
         const root = document.documentElement;
         try {
-            localStorage.setItem("theme", next);
+            if (next === "system") {
+                localStorage.removeItem("theme");
+            } else {
+                localStorage.setItem("theme", next);
+            }
         } catch {}
         if (next === "system") delete root.dataset.theme;
         else root.dataset.theme = next;
