@@ -11,8 +11,7 @@ export default function Hero() {
                     <span className="font-name text-gold justify-self-end text-[2.6rem] sm:text-7xl md:text-8xl tracking-wide">SOUMAHORO</span>
                 </h1>
                 <p className="mt-10 max-w-xl text-xl">
-                    I build practical full-stack software and go back to first principles on purpose, currently working through{" "}
-                    <em>Computer Systems: A Programmer&apos;s Perspective</em>.
+                    I build practical full-stack software and go back to first principles on purpose, currently building <em>HTTP Server in C</em>.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-sm">
                     <Link href="/#projects" className="text-sage underline underline-offset-4 decoration-1">
