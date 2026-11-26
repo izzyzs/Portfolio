@@ -6,13 +6,16 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSidenotes from "./rehype-sidenotes";
 import { mdxComponents } from "@/components/journal/mdx-components";
 
-export function PostBody({ source }: { source: string }) {
+// .md files are compiled as plain Markdown, so a stray "<" or "{" in the text is just text.
+// .mdx files can also use components like <Note>.
+export function PostBody({ source, format = "mdx" }: { source: string; format?: "md" | "mdx" }) {
     return (
         <MDXRemote
             source={source}
             components={mdxComponents}
             options={{
                 mdxOptions: {
+                    format,
                     remarkPlugins: [remarkGfm],
                     rehypePlugins: [
                         rehypeSlug,

@@ -17,7 +17,7 @@ export type PostMeta = {
     readingMinutes: number;
 };
 
-export type Post = PostMeta & { content: string };
+export type Post = PostMeta & { content: string; format: "md" | "mdx" };
 
 export type SeriesInfo = {
     name: string;
@@ -61,6 +61,7 @@ function readAll(): Post[] {
             issue: 0,
             readingMinutes: readingMinutes(content),
             content,
+            format: file.endsWith(".mdx") ? "mdx" : "md",
         } satisfies Post;
     });
 
@@ -79,7 +80,7 @@ function all(): Post[] {
     return (cache ??= readAll());
 }
 
-const strip = ({ content: _content, ...meta }: Post): PostMeta => meta;
+const strip = ({ content: _content, format: _format, ...meta }: Post): PostMeta => meta;
 
 export function getPosts(): PostMeta[] {
     return all().map(strip);

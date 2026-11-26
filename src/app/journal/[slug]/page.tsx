@@ -63,7 +63,7 @@ export default async function PostPage({ params }: Props) {
             {series && <SeriesBox series={series} current={post.slug} />}
 
             <div className="journal-prose">
-                <PostBody source={post.content} />
+                <PostBody source={post.content} format={post.format} />
             </div>
 
             {series && <SeriesBox series={series} current={post.slug} compact />}
