@@ -89,3 +89,260 @@
         }
     }
 }
+
+/*
+ * Journal entries.
+ * The text column is ~40rem. On wide screens footnotes move into the right
+ * margin (see rehype-sidenotes.ts); on narrow screens they stay at the end.
+ */
+@layer components {
+    .journal-article {
+        max-width: 40rem;
+    }
+    @media (min-width: 80rem) {
+        .journal-article {
+            margin-left: 4rem;
+        }
+    }
+
+    .journal-prose {
+        font-size: 1.15rem;
+        line-height: 1.75;
+        hyphens: auto;
+        text-wrap: pretty;
+    }
+    .journal-prose > * + * {
+        margin-top: 1.25em;
+    }
+    .journal-prose h2,
+    .journal-prose h3 {
+        position: relative;
+        font-weight: 500;
+        line-height: 1.25;
+        scroll-margin-top: 5rem;
+    }
+    .journal-prose h2 {
+        font-size: 1.75rem;
+        margin-top: 2.25em;
+        color: var(--gold);
+    }
+    .journal-prose h3 {
+        font-size: 1.35rem;
+        margin-top: 1.75em;
+    }
+    .journal-prose .heading-anchor {
+        margin-left: 0.4em;
+        font-size: 0.8em;
+        color: var(--muted);
+        text-decoration: none;
+        opacity: 0;
+        transition: opacity 0.15s;
+    }
+    .journal-prose :is(h2, h3):hover .heading-anchor,
+    .journal-prose .heading-anchor:focus-visible {
+        opacity: 1;
+    }
+
+    /* A drop cap on the opening paragraph, like the first page of an article. */
+    .journal-prose > p:first-of-type::first-letter {
+        float: left;
+        font-family: var(--font-heading);
+        font-size: 3.6em;
+        line-height: 0.85;
+        padding: 0.08em 0.1em 0 0;
+        color: var(--gold);
+    }
+
+    .journal-prose a {
+        text-decoration: underline;
+        text-decoration-color: var(--rule);
+        text-underline-offset: 0.2em;
+        transition: text-decoration-color 0.15s;
+    }
+    .journal-prose a:hover {
+        text-decoration-color: var(--sage);
+    }
+    .journal-prose :is(ul, ol) {
+        padding-left: 1.5em;
+    }
+    .journal-prose ul {
+        list-style: disc;
+    }
+    .journal-prose ol {
+        list-style: decimal;
+    }
+    .journal-prose li + li {
+        margin-top: 0.35em;
+    }
+    .journal-prose li::marker {
+        color: var(--muted);
+    }
+    .journal-prose blockquote {
+        border-left: 2px solid var(--gold);
+        padding-left: 1.25em;
+        font-style: italic;
+        color: var(--muted);
+    }
+    .journal-prose hr {
+        border: 0;
+        height: auto;
+        overflow: visible;
+        text-align: center;
+        margin: 2.5em 0;
+    }
+    .journal-prose hr::after {
+        content: "⁂";
+        color: var(--gold);
+        font-size: 1.25rem;
+    }
+    .journal-prose table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95em;
+    }
+    .journal-prose :is(th, td) {
+        border-bottom: 1px solid var(--rule);
+        padding: 0.4em 0.6em;
+        text-align: left;
+    }
+    .journal-prose th {
+        font-family: var(--font-heading);
+        font-weight: 500;
+    }
+    .journal-prose img {
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+    }
+
+    /* Code */
+    .journal-prose :not(pre) > code {
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        padding: 0.05em 0.3em;
+    }
+    .journal-prose figure[data-rehype-pretty-code-figure] {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .journal-prose [data-rehype-pretty-code-title] {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-bottom: 0;
+        border-radius: 2px 2px 0 0;
+        padding: 0.4rem 1rem;
+    }
+    .journal-prose [data-rehype-pretty-code-title] + pre {
+        border-radius: 0 0 2px 2px;
+    }
+    .journal-prose pre {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        line-height: 1.65;
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        padding: 1rem 0;
+        overflow-x: auto;
+        hyphens: none;
+    }
+    .journal-prose pre code {
+        display: grid;
+    }
+    .journal-prose pre [data-line] {
+        padding: 0 1rem;
+    }
+    .journal-prose pre [data-highlighted-line] {
+        background: color-mix(in srgb, var(--gold) 14%, transparent);
+        box-shadow: inset 2px 0 0 var(--gold);
+    }
+    /* Shiki renders both themes; show the one that matches the site. */
+    .journal-prose pre span {
+        color: var(--shiki-light);
+    }
+    :root[data-theme="dark"] .journal-prose pre span {
+        color: var(--shiki-dark);
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .journal-prose pre span {
+            color: var(--shiki-dark);
+        }
+    }
+
+    /* Notes */
+    .journal-note {
+        border-left: 2px solid var(--sage);
+        background: var(--surface);
+        padding: 0.9em 1.2em;
+        border-radius: 0 2px 2px 0;
+        font-size: 0.95em;
+    }
+    .journal-note > * + * {
+        margin-top: 0.75em;
+    }
+    .journal-note-title {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--sage);
+    }
+
+    /* Footnotes: listed at the end on narrow screens, in the margin on wide ones. */
+    .journal-prose sup a {
+        font-family: var(--font-mono);
+        font-size: 0.75em;
+        color: var(--gold);
+        text-decoration: none;
+        padding: 0 0.1em;
+    }
+    .journal-prose .footnotes {
+        margin-top: 3em;
+        padding-top: 1.25em;
+        border-top: 1px solid var(--rule);
+        font-size: 0.9em;
+        color: var(--muted);
+    }
+    .journal-prose .footnotes [data-footnote-backref] {
+        text-decoration: none;
+    }
+    .journal-prose .sidenote {
+        display: none;
+    }
+    @media (min-width: 80rem) {
+        .journal-prose .sidenote {
+            display: block;
+            float: right;
+            clear: right;
+            width: 15rem;
+            margin-right: -18rem;
+            margin-top: 0.3rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--muted);
+            hyphens: manual;
+        }
+        .journal-prose .sidenote-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--gold);
+            margin-right: 0.4em;
+        }
+        .journal-prose .sidenote-p {
+            display: inline;
+        }
+        .journal-prose .sidenote-p + .sidenote-p {
+            display: block;
+            margin-top: 0.5em;
+        }
+        .journal-prose .footnotes {
+            display: none;
+        }
+    }
+}
