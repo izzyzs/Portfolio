@@ -1,32 +1,27 @@
-import React from "react";
-import { amiriHeavy } from "@/fonts/Fonts";
-import "./header.css";
+import Link from "next/link";
+import { nav, site } from "@/content/site";
+import ThemeToggle from "./ThemeToggle";
 
-const Header = () => {
+export default function Header() {
     return (
-        <header className="bg-oxford-blue pt-4 border-b border-gray-600 sticky top-0 z-10">
-            <nav className="grid grid-cols-3 gap-5 bg-inherit">
-                <h1 className={`${amiriHeavy.className} md:text-3xl`}>Ismael Soumahoro.</h1>
-                <ul className={`flex justify-end col-start-3`}>
-                    <li className="mx-1">
-                        <a href="#about" className="px-2 py-1 md:py-2 text-xs text-nowrap md:text-base hover:bg-zinc-700 transition duration-150 hover:ease-in-out">
-                            About Me
-                        </a>
-                    </li>
-                    <li className="mx-1">
-                        <a href="#projects" className="px-2 py-1 md:py-2 text-xs md:text-base hover:bg-zinc-700 transition duration-150 hover:ease-in-out">
-                            Projects
-                        </a>
-                    </li>
-                    <li className="mx-1">
-                        <a href="#contact" className="px-2 py-1 md:py-2 text-xs text-nowrap md:text-base hover:bg-zinc-700 transition duration-150 hover:ease-in-out">
-                            Contact Me
-                        </a>
-                    </li>
-                </ul>
+        <header className="md:sticky top-0 z-10 bg-ground border-b border-rule">
+            <nav aria-label="Main" className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 py-3">
+                <Link href="/" className="font-heading text-xl md:text-2xl font-medium no-underline">
+                    {site.name}
+                </Link>
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    <ul className="flex gap-4 md:gap-6 font-mono text-sm">
+                        {nav.map((item) => (
+                            <li key={item.href}>
+                                <Link href={item.href} className="text-muted hover:text-ink transition-colors">
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <ThemeToggle />
+                </div>
             </nav>
         </header>
     );
-};
-
-export default Header;
+}

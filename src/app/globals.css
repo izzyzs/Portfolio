@@ -1,29 +1,91 @@
 @import "tailwindcss";
 
-@theme {
-    --color-oxford-blue: oklch(0.1868 0.0427 265.98);
-    /*--color-oxford-blue: oklch(0.2801 0.0354 252.35);*/
-    --color-subtle-gold: oklch(0.6584 0.1018 79.13);
-    --color-script-white: oklch(0.8889 0 0);
-    --color-graphite: oklch(0.2931 0 0);
-    --color-linen: oklch(0.947 0.0156 86.43);
+/*
+ * Theme: "retro-refined journal".
+ * Paper (light) and Night (dark) palettes live as CSS variables on <html>.
+ * The theme toggle sets data-theme="light" | "dark"; with no attribute the
+ * visitor's system setting decides.
+ */
+:root {
+    --ground: #f3ede0;
+    --surface: #eae2cf;
+    --ink: #15203a;
+    --muted: #5b6174;
+    --rule: #d2c6ac;
+    --gold: #8a6820;
+    --sage: #4d6a52;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ground: #0b1324;
+        --surface: #121c33;
+        --ink: #e8e2d4;
+        --muted: #98a0b3;
+        --rule: #26324d;
+        --gold: #cba65e;
+        --sage: #9ebba1;
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme="dark"] {
+    --ground: #0b1324;
+    --surface: #121c33;
+    --ink: #e8e2d4;
+    --muted: #98a0b3;
+    --rule: #26324d;
+    --gold: #cba65e;
+    --sage: #9ebba1;
+    color-scheme: dark;
+}
+
+@theme inline {
+    --color-ground: var(--ground);
+    --color-surface: var(--surface);
+    --color-ink: var(--ink);
+    --color-muted: var(--muted);
+    --color-rule: var(--rule);
+    --color-gold: var(--gold);
+    --color-sage: var(--sage);
+
+    --font-body: var(--font-old-standard), Georgia, serif;
+    --font-heading: var(--font-fraunces), Georgia, serif;
+    --font-name: var(--font-caslon), Georgia, serif;
+    --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
 
     --breakpoint-3xl: 144rem;
 }
 
-@layer utilities {
-    /* :root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
- */
+@layer base {
+    body {
+        background: var(--ground);
+        color: var(--ink);
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+    }
 
-    /* :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-} */
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-heading);
+        text-wrap: balance;
+        font-variation-settings: "SOFT" 50;
+    }
 
-    .my-svg {
-        stroke: inherit;
+    :focus-visible {
+        outline: 2px solid var(--sage);
+        outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto !important;
+        }
+        body {
+            transition: none;
+        }
     }
 }
