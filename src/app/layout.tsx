@@ -38,11 +38,11 @@ export default function RootLayout({
             <head>
                 <script dangerouslySetInnerHTML={{ __html: themeScript }} />
             </head>
-            <body className="font-body antialiased text-lg leading-relaxed">
+            <body className="font-body antialiased text-lg leading-relaxed min-h-dvh flex flex-col">
                 <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-ground focus:px-3 focus:py-2">
                     Skip to content
                 </a>
-                <div className="mx-auto max-w-6xl px-5 sm:px-10 lg:px-16">
+                <div className="flex-1 w-full mx-auto max-w-6xl px-5 sm:px-10 lg:px-16">
                     <Header />
                     <main id="main">{children}</main>
                 </div>
