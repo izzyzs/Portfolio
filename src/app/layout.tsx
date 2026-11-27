@@ -4,6 +4,7 @@ import { fontVariables } from "@/fonts/Fonts";
 import { site } from "@/content/site";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
     metadataBase: new URL(site.url),
@@ -47,6 +48,7 @@ export default function RootLayout({
                     <main id="main">{children}</main>
                 </div>
                 <Footer />
+                <Analytics />
             </body>
         </html>
     );
