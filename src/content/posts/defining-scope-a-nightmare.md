@@ -3,8 +3,8 @@ title: "Defining Scope: A Nightmare"
 date: 2026-11-26
 summary: Define scope or drown in the Bottomless Pit of Scope Creep.
 tags:
-  - c
-  - networking
+    - c
+    - networking
 series: HTTP server
 draft: false
 ---
@@ -33,7 +33,7 @@ Due to this project, I've learned a new paradigm to implement the parsing mechan
 
 My current implementation of that paradigm involves the existence of many states to maintain minute detail as necessary between function calls.
 
-E.g., the finite state machine for the HTTP request method:
+E.g., the finite state machine for the HTTP request method[^1]:
 
 ![](/images/journal/defining-scope/http-method-fsm-diagram.webp)
 
@@ -78,7 +78,9 @@ insert 27 more lines of states
 };
 ```
 
-That's 45 total possible states for text that is, at most, 7 characters long and contains solely alphabetical characters. And there's only one type of method. The `host` part of an `authority` in an `absolute-URI` comes in 4 distinct types [RFC 3986](https://www.rfc-editor.org/info/rfc3986/):
+That's 45 total possible states for text that is, at most, 7 characters long and contains solely alphabetical characters. And there's only one type of method. The `host` part of an `authority` in an `absolute-URI` comes in 4 distinct types[^2].
+
+From [RFC 3986](https://www.rfc-editor.org/info/rfc3986/):
 
 ```ABNF
 host       = IP-literal / IPv4address / reg-name
@@ -88,10 +90,14 @@ IP-literal = "[" ( IPv6address / IPvFuture  ) "]"
 IPvFuture  = "v" 1*HEXDIG "." 1*( unreserved / sub-delims / ":" )
 ```
 
-So the recognition of the start of a type and then the actual states required to ensure compliance with that type definition would easily run the number of states well past 100[^1].
+So the recognition of the start of a type and then the actual states required to ensure compliance with that type definition would easily run the number of states well past 100[^3].
 
 With a different set of circumstances, I'd love the opportunity to take my sweet time perfecting the validation of IPvFuture. The goal, however, is much more specific than literally implementing every functionality required for a 100% compliant HTTP/1.1 server. I want to get requests, understand them, build responses, and get them back to clients as fast and efficiently as possible with the goal of gaining a better understanding of what a computer has to do to _be_ a server.
 
-So, I'm going to (with some direction from AI) define a project scope detailed enough that I can personally write the program, while not being held up by implementation details that I could easily have Claude handle in a 30-minute session 💔.
+So, I'm going to, with some deliberation with AI, define a project scope detailed enough that I can personally write the program, while not being held up by implementation details that I could easily have Claude handle in a 30-minute session 💔.
 
-[^1]: Note: I could be wrong here. I am assuming this number given my current implementation of FSMs, and if there's a better approach or something I'm missing, please let me know through the contact section or a social media channel!
+[^1]: AI-generated model of my FSM implementation for HTTP methods.
+
+[^2]: `IP-literal` contains two subtypes, `IPv6address` and `IPvFuture` as shown in the RFC 3986 excerpt coming up, which are distinct enough in my eyes that they count as 2 seperate host types side `IPv4address` and `reg-name`
+
+[^3]: I could be wrong here. I am assuming this number given my current implementation of FSMs, and if there's a better approach or something I'm missing, please let me know through the contact section or a social media channel!
